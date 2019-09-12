@@ -13,9 +13,9 @@ const Search = (props) => {
     <div>
       {props.isFetching && <p>Searching</p>}
       {!props.isFetching && props.results && 
-        <div className="results-container">
-          {props.results.map((query) => 
-            <div key={query.title} className="search-card"  onClick={() => handleClick(query.id)}>
+        <div className="search-container">
+          {props.results && props.results.map((query) => 
+            <div key={query.title} className="search-card"  onClick={() => handleClick(query.woeid)}>
               <h2>{query.title}</h2>
               <p>Category: {query.location_type}</p>
               <p>Coordinates: {query.latt_long}</p>

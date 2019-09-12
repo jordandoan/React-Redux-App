@@ -1,6 +1,6 @@
 import { FETCH_DATA, FETCH_SUCCESS, FETCH_FAILURE, RESET } from '../actions';
 
-export const reducer  = (state = initialFetch, action) => {
+export const reducer  = (state = initialState, action) => {
   switch(action.type) {
     case FETCH_DATA:
       return {...state, isFetching: true}

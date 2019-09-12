@@ -1,6 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { connect } from 'react-redux';
 
-const Home = () => {
+import { resetState } from '../actions';
+
+const Home = (props) => {
+  useEffect(() => {
+    props.resetState();
+  }, [])
   return (
     <div className="home">
       <h1>WEATHER FINDER</h1>
@@ -9,4 +15,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default connect(null, {resetState: resetState})(Home);

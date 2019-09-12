@@ -5,7 +5,8 @@ import { Route } from 'react-router-dom';
 
 import Home from './components/Home';
 import NavBar from './components/NavBar';
-import Search from "./components/Search";
+import Search from './components/Search';
+import Location from './components/Location';
 
 import './App.css';
 
@@ -14,7 +15,8 @@ const App = () => {
     <div className="App">
       <NavBar />
       <Route exact path="/" component={Home} />
-      <Route path ="/" component={Search} />
+      <Route path ="/search" component={Search} />
+      <Route path ="/location" component={Location} />
       {/* {props.isFetching && <p>Fetching Data...</p>}
       {!props.isFetching && props.results && <p>{props.results.title}</p>} */}
     </div>

@@ -1,9 +1,18 @@
 .App {
-  width: 70%;
+  width: 90%;
   margin:auto;
 }
 
+.info {
+  display:flex;
+  flex-wrap:flex;
+}
 .weather-container {
   display:flex;
   flex-wrap:wrap;
+}
+
+.weather-card {
+  width: 15%;
+  margin: 0 0.5%;
 }

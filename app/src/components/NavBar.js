@@ -18,7 +18,7 @@ const NavBar = (props) => {
 
   return (
     <div className="navigation">
-        <p className="header-title">Weather Finder</p>
+        <Link to ="/"><p className="header-title">Weather Finder</p></Link>
         <input type="text" value={query} onChange={(e) => handleChange(e)}/>
         <Link to="/search"><button onClick={handleSubmit}>Search</button></Link>
     </div>

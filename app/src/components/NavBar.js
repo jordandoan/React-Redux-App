@@ -1,25 +1,26 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { fetchData } from '../actions';
 
-const NavBar = () => {
+const NavBar = (props) => {
   const [query, setQuery] = useState("");
 
   const handleChange = (event) => {
     setQuery(event.target.value)
   }
 
-  const handleSubmit = (props) => {
+  const handleSubmit = () => {
     props.fetchData(`/search/?query=${query}`)
     setQuery("");
-    props.history.push("/search");
   }
+
   return (
     <div className="navigation">
         <p className="header-title">Weather Finder</p>
         <input type="text" value={query} onChange={(e) => handleChange(e)}/>
-        <button onClick={handleSubmit}>Search</button>
+        <Link to="/search"><button onClick={handleSubmit}>Search</button></Link>
     </div>
   )
 }

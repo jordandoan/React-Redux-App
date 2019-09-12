@@ -1,9 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const Search = () => {
+import { fetchData } from '../actions';
+const Search = (props) => {
   return (
-    <div>I am search</div>
-  )
+    <div>
+      {props.isFetching && <p>Searching</p>}
+    </div>
+  );
 }
 
-export default Search;
+const mapStateToProps = state => {
+  return {
+    isFetching: state.isFetching,
+    results: state.results,
+  }
+}
+
+export default connect(mapStateToProps, {fetchData: fetchData})(Search);

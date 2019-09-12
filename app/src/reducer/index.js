@@ -1,4 +1,4 @@
-import { FETCH_DATA, FETCH_SUCCESS } from '../actions';
+import { FETCH_DATA, FETCH_SUCCESS, FETCH_FAILURE } from '../actions';
 
 export const reducer  = (state = initialState, action) => {
   switch(action.type) {
@@ -6,6 +6,8 @@ export const reducer  = (state = initialState, action) => {
       return {...state, isFetching: true}
     case FETCH_SUCCESS:
       return {...state, results: action.payload, isFetching: false}
+    case FETCH_FAILURE:
+      return {...state, results: "", isFetching: false}
     default:
       return state
   }

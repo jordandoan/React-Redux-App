@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import { connect } from 'react-redux'
+import { fetchData } from './actions';
+import { Route } from 'react-router-dom';
+
+import Home from './components/Home';
+import NavBar from './components/NavBar';
+import Search from "./components/Search";
+
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <Route exact path="/" component={Home} />
+      <Route path ="/" component={Search} />
+      {/* {props.isFetching && <p>Fetching Data...</p>}
+      {!props.isFetching && props.results && <p>{props.results.title}</p>} */}
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    title: state.title,
+    results: state.results,
+    isFetching: state.isFetching,
+  }
+}
+export default connect(mapStateToProps, {fetchData: fetchData})(App);

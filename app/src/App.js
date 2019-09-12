@@ -12,13 +12,13 @@ import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <NavBar />
-      <Route exact path="/" component={Home} />
-      <Route path ="/search" component={Search} />
-      <Route path ="/location" component={Location} />
-      {/* {props.isFetching && <p>Fetching Data...</p>}
-      {!props.isFetching && props.results && <p>{props.results.title}</p>} */}
+      <div className="App">
+        <Route exact path="/" component={Home} />
+        <Route path ="/search" component={Search} />
+        <Route path ="/location" component={Location} />
+      </div>
     </div>
   );
 }

@@ -14,13 +14,12 @@ const Location = ({isFetching, results}) => {
                 {new Date(Date.parse(results.time)).toLocaleTimeString()}
             </span>
           </h2>
-          
+
           <div className="info">
-            <p>Timezone: {results.timezone}</p>
-            <p>Coordinates: {results.latt_long}</p>
-            <p>Current Time: {results.time}</p>
-            <p>Sunrise: {new Date(Date.parse(results.sun_rise)).toLocaleString()}</p>
-            <p>Sunset: {new Date(Date.parse(results.sun_set)).toLocaleString()}</p>
+            <p>Timezone: <br/>{results.timezone}</p>
+            <p>Coordinates: <br/>{results.latt_long}</p>
+            <p>Sunrise: <br/>{new Date(Date.parse(results.sun_rise)).toLocaleTimeString()}</p>
+            <p>Sunset: <br/>{new Date(Date.parse(results.sun_set)).toLocaleTimeString()}</p>
           </div>
           <div className="weather-container">
             {results.consolidated_weather.map((day, idx) => 

@@ -9,8 +9,8 @@ const Home = (props) => {
   }, [])
   return (
     <div className="home">
-      <h1>WEATHER FINDER</h1>
-      <p>This is the weather app by Jordan. You can search for cities and then view their weather. Stay tuned...</p>
+      <h1>Find Your Forecast</h1>
+      <p>Weather app powered by Metaweather's API. Created by Jordan.</p>
     </div>
   )
 }

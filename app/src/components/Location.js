@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 const Location = ({isFetching, results}) => {
   const URL = "https://www.metaweather.com/static/img/weather/"
-  console.log(results)
   return (
     <div>
       {isFetching && <p>Fetching Location Data...</p>}

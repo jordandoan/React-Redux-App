@@ -5,12 +5,10 @@ export const reducer  = (state = initialState, action) => {
     case FETCH_DATA:
       return {...state, isFetching: true}
     case FETCH_SUCCESS:
-      console.log(action.payload);
       return {...state, results: action.payload, isFetching: false}
     case FETCH_FAILURE:
       return {...state, results: "", isFetching: false}
     case RESET:
-      console.log("resetting...");
       return initialState
     default:
       return state

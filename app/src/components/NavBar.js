@@ -16,11 +16,18 @@ const NavBar = (props) => {
     setQuery("");
   }
 
+  const handleKey = (event) => {
+    if (event.keyCode == 13) {
+      handleSubmit();
+      props.history.push("/search");
+    }
+  }
+
   return (
     <div className="navigation">
         <p><Link to ="/" className="header-title">Forecast Finder</Link></p>
         <div>
-          <input placeholder="Search City" type="text" value={query} onChange={(e) => handleChange(e)}/>
+          <input placeholder="Search City" type="text" value={query} onChange={(e) => handleChange(e)} onKeyDown={(e) => handleKey(e)}/>
           <Link to="/search"><button onClick={handleSubmit}>Search</button></Link>
         </div>
     </div>

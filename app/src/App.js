@@ -13,7 +13,7 @@ import './App.css';
 const App = () => {
   return (
     <div>
-      <NavBar />
+      <Route path ="/" component={NavBar} />
       <div className="App">
         <Route exact path="/" component={Home} />
         <Route path ="/search" component={Search} />
